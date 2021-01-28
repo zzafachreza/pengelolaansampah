@@ -1,195 +1,82 @@
-import React, {useState} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {StyleSheet, Text, View, ImageBackground, Image} from 'react-native';
 import {Icon} from 'react-native-elements';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
-export default function Home() {
-  const [speaker, setSepeaker] = useState(false);
-  const saklar = (x) => {
-    setSepeaker(x);
-  };
+import Header from '../../components/header';
 
+export default function Home({navigation}) {
   return (
-    <View
+    <ImageBackground
+      source={require('../../assets/background.jpg')}
       style={{
         flex: 1,
         padding: 10,
       }}>
-      <View
-        style={{
-          flex: 1,
-          //   backgroundColor: 'red',
-          flexDirection: 'row',
-        }}>
-        <View
-          style={{
-            flex: 1,
-            // backgroundColor: 'blue',
-          }}>
-          {!speaker ? (
-            <TouchableOpacity
-              onPress={() => saklar(true)}
-              style={{
-                // marginRight: 100,
-                padding: 10,
-                margin: 10,
-                width: 100,
-                justifyContent: 'center',
-                alignItems: 'center',
-                // backgroundColor: 'yellow',
-              }}>
-              <Icon
-                name="volume-up"
-                type="font-awesome"
-                color="#65C5D8"
-                size={35}
-              />
-            </TouchableOpacity>
-          ) : (
-            <TouchableOpacity
-              onPress={() => saklar(false)}
-              style={{
-                // marginRight: 100,
-                padding: 10,
-                margin: 10,
-                width: 100,
-                justifyContent: 'center',
-                alignItems: 'center',
-                // backgroundColor: 'yellow',
-              }}>
-              <Icon
-                name="volume-off"
-                type="font-awesome"
-                color="#65C5D8"
-                size={35}
-              />
-            </TouchableOpacity>
-          )}
-        </View>
-        <View
-          style={{
-            flex: 3,
-            // backgroundColor: 'green',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
-          <Text
-            style={{
-              fontSize: 25,
-              fontFamily: 'Montserrat-Regular',
-            }}>
-            Aplikasi Pengelolaan Sampah
-          </Text>
-        </View>
-      </View>
+      <Header keterangan="Aplikasi Pengelolaan Sampah" />
+
       <View
         style={{
           flex: 4,
-          backgroundColor: 'white',
+          // backgroundColor: 'white',
           borderRadius: 10,
           padding: 20,
-          elevation: 1,
+          // elevation: 1,
         }}>
         <TouchableOpacity
+          onPress={() => navigation.navigate('Materi')}
           style={{
-            backgroundColor: '#67CD7E',
-            width: '50%',
-            height: 50,
-            paddingLeft: 10,
-            alignItems: 'center',
-            borderRadius: 10,
-            flexDirection: 'row',
-            marginVertical: 5,
-            elevation: 1,
+            margin: 5,
           }}>
-          <Icon name="trash-o" type="font-awesome" color="white" size={20} />
-          <Text
+          <Image
+            source={require('../../assets/sampah.png')}
             style={{
-              left: 10,
-              color: 'white',
-              fontSize: 20,
-              fontFamily: 'Montserrat-SemiBold',
-            }}>
-            Pengelolaan Sampah
-          </Text>
+              width: 400,
+              height: 50,
+            }}
+          />
         </TouchableOpacity>
 
         <TouchableOpacity
           style={{
-            backgroundColor: '#65C5D8',
-            width: '50%',
-            height: 50,
-            paddingLeft: 10,
-            justifyContent: 'flex-start',
-            alignItems: 'center',
-            borderRadius: 10,
-            flexDirection: 'row',
-            marginVertical: 5,
-            elevation: 1,
+            margin: 5,
           }}>
-          <Icon name="pencil" type="font-awesome" color="white" size={20} />
-          <Text
+          <Image
+            source={require('../../assets/latihan.png')}
             style={{
-              left: 10,
-              color: 'white',
-              fontSize: 20,
-              fontFamily: 'Montserrat-SemiBold',
-            }}>
-            Latihan
-          </Text>
+              width: 400,
+              height: 50,
+            }}
+          />
         </TouchableOpacity>
 
         <TouchableOpacity
           style={{
-            backgroundColor: '#67CD7E',
-            width: '50%',
-            height: 50,
-            paddingLeft: 10,
-            justifyContent: 'flex-start',
-            alignItems: 'center',
-            borderRadius: 10,
-            flexDirection: 'row',
-            marginVertical: 5,
-            elevation: 1,
+            margin: 5,
           }}>
-          <Icon name="desktop" type="font-awesome" color="white" size={20} />
-          <Text
+          <Image
+            source={require('../../assets/tutorial.png')}
             style={{
-              left: 10,
-              color: 'white',
-              fontSize: 20,
-              fontFamily: 'Montserrat-SemiBold',
-            }}>
-            Tutorial
-          </Text>
+              width: 400,
+              height: 50,
+            }}
+          />
         </TouchableOpacity>
 
         <TouchableOpacity
           style={{
-            backgroundColor: '#65C5D8',
-            width: '50%',
-            height: 50,
-            paddingLeft: 10,
-            justifyContent: 'flex-start',
-            alignItems: 'center',
-            elevation: 1,
-            borderRadius: 10,
-            flexDirection: 'row',
-            marginVertical: 5,
+            margin: 5,
           }}>
-          <Icon name="image" type="font-awesome" color="white" size={20} />
-          <Text
+          <Image
+            source={require('../../assets/gallery.png')}
             style={{
-              left: 10,
-              color: 'white',
-              fontSize: 20,
-              fontFamily: 'Montserrat-SemiBold',
-            }}>
-            Gallery
-          </Text>
+              width: 400,
+              height: 50,
+            }}
+          />
         </TouchableOpacity>
       </View>
-    </View>
+    </ImageBackground>
   );
 }
 
