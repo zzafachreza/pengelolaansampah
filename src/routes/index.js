@@ -1,7 +1,8 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {Splash, Home} from '../pages';
+import {Icon} from 'react-native-elements';
 
 const Stack = createStackNavigator();
 export default function Router() {
