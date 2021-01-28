@@ -15,10 +15,7 @@ export default function Splash({navigation}) {
         alignItems: 'center',
       }}>
       <Image
-        source={{
-          uri:
-            'https://waste4change.com/official/2.8.assets/img/icons/waste-type/accepted.png',
-        }}
+        source={require('../../assets/logo.png')}
         style={{
           width: 123,
           height: 120,
