@@ -22,7 +22,7 @@ var whoosh = new Sound(
   },
 );
 
-export default function header({keterangan, tipe}) {
+export default function header2({keterangan}) {
   const [speaker, setSepeaker] = useState(false);
   const saklar = (x) => {
     setSepeaker(x);
@@ -41,11 +41,12 @@ export default function header({keterangan, tipe}) {
         flexDirection: 'row',
       }}>
       <View
-        style={{
-          flex: 1,
-          alignItems: 'flex-start',
-          // backgroundColor: 'blue',
-        }}>
+        style={
+          {
+            //   flex: 1,
+            // backgroundColor: 'blue',
+          }
+        }>
         {!speaker ? (
           <TouchableOpacity
             onPress={() => {
@@ -61,12 +62,14 @@ export default function header({keterangan, tipe}) {
               width: 100,
               justifyContent: 'center',
               alignItems: 'center',
-              // backgroundColor: 'yellow',
+              backgroundColor: '#000',
+              borderRadius: 10,
+              opacity: 0.7,
             }}>
             <Icon
               name="volume-up"
               type="font-awesome"
-              color={tipe == 'Gallery' ? '#FFF' : 'black'}
+              color="white"
               size={35}
             />
           </TouchableOpacity>
@@ -88,46 +91,32 @@ export default function header({keterangan, tipe}) {
             <Icon
               name="volume-off"
               type="font-awesome"
-              color={tipe == 'Gallery' ? '#FFF' : 'black'}
+              color="white"
               size={35}
             />
           </TouchableOpacity>
         )}
       </View>
-      {tipe == 'Gallery' ? (
-        <View
+      <View
+        style={{
+          flex: 3,
+          // backgroundColor: 'green',
+          justifyContent: 'center',
+          alignItems: 'flex-end',
+        }}>
+        <Text
           style={{
-            flex: 3,
-            // backgroundColor: 'green',
-            justifyContent: 'center',
-            alignItems: 'flex-end',
+            fontSize: 25,
+            borderRadius: 10,
+            color: '#FFF',
+            backgroundColor: '#000',
+            opacity: 0.7,
+            padding: 20,
+            fontFamily: 'Montserrat-SemiBold',
           }}>
-          <Text
-            style={{
-              color: '#FFF',
-              fontSize: 25,
-              fontFamily: 'Montserrat-SemiBold',
-            }}>
-            {keterangan}
-          </Text>
-        </View>
-      ) : (
-        <View
-          style={{
-            flex: 3,
-            // backgroundColor: 'green',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
-          <Text
-            style={{
-              fontSize: 25,
-              fontFamily: 'Montserrat-SemiBold',
-            }}>
-            {keterangan}
-          </Text>
-        </View>
-      )}
+          GALLERY
+        </Text>
+      </View>
     </View>
   );
 }

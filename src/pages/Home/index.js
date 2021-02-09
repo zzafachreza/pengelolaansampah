@@ -75,6 +75,7 @@ export default function Home({navigation}) {
           </TouchableOpacity>
 
           <TouchableOpacity
+            onPress={() => navigation.navigate('Latihan')}
             style={{
               margin: 5,
             }}>
@@ -91,6 +92,7 @@ export default function Home({navigation}) {
           </TouchableOpacity>
 
           <TouchableOpacity
+            onPress={() => navigation.navigate('Tutorial')}
             style={{
               margin: 5,
             }}>
@@ -107,6 +109,7 @@ export default function Home({navigation}) {
           </TouchableOpacity>
 
           <TouchableOpacity
+            onPress={() => navigation.navigate('Gallery')}
             style={{
               margin: 5,
               borderRadius: 10,
